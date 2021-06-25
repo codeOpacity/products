@@ -1,0 +1,129 @@
+
+
+/*Global Styling */
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+h1,h2,h3,h4,h5 {
+    color: $primary;
+}
+p{
+    color: $ternery;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    pointer-events: none;
+    &::selection {
+        background: transparent;
+    }
+}
+
+
+/* Theme Styling */
+
+  [class*="__section"] {
+    padding-bottom: 8rem!important;
+  }
+  .title,h6 {
+      color: $secondary;
+  }
+  .subtitle {
+      color: $primary;
+  }
+  .logo {
+    width: 110px;
+  }
+  .icon {
+      display: block;
+      width: 70px;
+      height: 70px;
+  }
+  .card__item {
+      padding: 1rem;
+      border-radius: .5rem;
+      box-shadow: 0 8px 24px rgba(51, 51, 51, 0.1);
+  }
+  .link {
+      color: $primary;
+  }
+  .nav-link {
+      font-size: 1.12rem!important;
+      color: $light;
+      &:hover {
+          color: $primary!important;
+      }
+  }
+
+.third{
+    color: $third;
+}
+.btn_primary {
+    @extend %btn;
+    background: $light;
+    color: $primary;
+    &:hover {
+        background: $primary;
+        color: $light;
+    }
+}
+.btn_secondery {
+    @extend %btn;
+    color: $light;
+    background: $primary;
+    transition: .3s;
+    &:hover {
+        color: $light;
+        opacity: .8!important;
+    }
+}
+  .btn-lg {
+    padding: 0.5rem 1rem!important;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  
+  .btn-sm {
+    padding: 0.25rem 0.5rem!important;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .ob_fit {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+  }
+  .op-play {
+      display: block!important;
+      color: $light;
+      font-size: 1.72rem;
+      margin-right: -5px;
+  }
+  .icon {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      background: $primary;
+      cursor: pointer;
+  }
+  .center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .column {
+      flex-direction: column-reverse;
+  }
+  .h__full {
+      min-height: 100%!important;
+  }

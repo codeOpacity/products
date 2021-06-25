@@ -1,0 +1,300 @@
+@import './variables/variables';
+@import './helper/helper';
+@import './mixins/mixins';
+
+/* Navbar */
+header {
+    transition: .3s;
+    &.bg {
+        background: $light;
+        box-shadow: $shadow;
+        .nav-link {
+            color: $primary;
+        }
+        .btn_primary  {
+            border: 1px solid $primary;
+        }
+    }
+}
+
+/* Home */
+.home__section {
+    position: relative;
+    min-height: 100vh;
+    h2{
+        color: $secondary;
+    }
+    .home__bg {
+        z-index: -1;
+        img {
+            transform: scale(1.2);
+        }
+    }
+}
+
+
+/* About  */
+.about__section {
+    padding: 1rem 0;
+    .block__groups {
+        .block {
+            h5 {
+                font-size: 1.375rem;
+            }
+            p {
+                font-size: .875rem;
+            }
+            margin-top: 1rem;
+            padding: .65rem;
+            border-left: 2px solid $primary;
+        }
+    }
+}
+
+/* Services */
+.services__section {
+    .row {
+        flex-wrap: wrap!important;
+    }
+    .col {
+        margin: 5px 0;
+        .link {
+            display: block;
+            padding-top: 1.25rem;
+        }
+    }
+    .card__item {
+        h6{
+            margin: .5rem 0;
+        }
+    }
+}
+
+/* Features */
+.features__section {
+    .features .column{
+        h5{
+           font-size: clamp(1.12rem,1.8vw,1.5rem);
+        }
+        h5 span{
+            display: inline-block;
+            height: 2px;
+            width: 10%;
+            vertical-align: middle;
+            background: $primary;
+            z-index: -1;
+            text-align: right;
+        }
+        &.two {
+            h5 span {
+                text-align: left;
+                left: 0;
+            }
+        }
+    }
+    
+}
+
+/* Call To Action */
+.cta__section {
+    .container {
+        border-radius: 1rem;
+        background: url('../images/cta-img.png'),lighten($color: $primary, $amount: .95);
+        background-position:100% 20%;
+        background-repeat: no-repeat;
+        padding: 2rem;
+    }
+    .h3 {
+        color: $light;
+    }
+}
+
+/* Portfolio Section */
+.portfolio__section {
+    .portfolio {
+       .col-12 {
+           margin-top: 2rem;
+            overflow: hidden;
+            img {
+                display: block;
+                width: 100%;
+                height: 360px;
+                object-fit: cover;
+                border-radius: .75rem;
+            }
+        }
+    }
+}
+
+/* Faq */
+.accordion {
+    margin-top: 40px;
+    .card {
+      padding: 1rem;
+      margin-bottom: 10px;
+      border-radius: 0px;
+      h2 {
+          font-size: clamp(.875rem, 2vw, 1.2rem);
+        background: url(https://cdn0.iconfinder.com/data/icons/entypo/91/arrow56-512.png) no-repeat calc(100% - 10px) center;
+      background-size: 20px;
+        cursor: pointer;
+        font-size: 18px;
+        color: $secondary;
+        &.collapsed {
+              background-image: url(https://cdn0.iconfinder.com/data/icons/arrows-android-l-lollipop-icon-pack/24/expand2-256.png);
+        }
+      }
+      &-body {
+        padding-left: 1rem;
+        border-left: 2px solid $primary;
+      }
+    }
+}
+
+/* Newsletters Section */
+.newsletter__section {
+    .newsletter {
+        border: 1px solid rgba(51, 51, 51, 0.158);
+        border-radius: 2rem;
+        .form_input {
+            float: left;
+            @extend %reset;
+            padding: 0 2rem;
+            background: transparent;
+        }
+        .button {
+            float: right;
+            .btn_secondery {
+                padding: 1rem 3rem;
+            }
+        }
+    }
+}
+
+/* Video Container */
+.video_bg {
+    background: url('https://images.unsplash.com/photo-1605132641261-0e8e54fdf6c3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80') no-repeat center/cover;
+    height: 360px;
+    min-width: 100%;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: .4;
+    }
+}
+
+/* Contact Section */
+.contact__section {
+    padding: 3rem 0!important;
+    background: rgba(0, 0, 0, 0.07);
+    .form_section {
+        background: $light;
+        border-radius: 1rem;
+    }
+    .form-control {
+        background: rgba(0, 0, 0, 0.07);
+    }
+}
+
+/* Footer section */
+.footer {
+    background: url('../images/cta-img.png') no-repeat ,opacify($color: $primary, $amount: .1);
+    background-position: right center;
+    color: $light;
+    .logo {
+        filter: invert(1);
+    }
+    .footer__item {
+        ul  {
+            list-style: none;
+            li a{
+                color: $light!important;
+                &:hover {
+                    opacity: .8;
+                }
+            }
+        }
+        p {
+            color: #fff!important;
+        }
+        .form-group {
+            display: flex;
+            input {
+                @extend %reset;
+                padding: .5rem .75rem;
+                border: 1px solid #ccc;
+                border-radius: .25rem;
+            }
+            button {
+                @extend %reset;
+                padding: .5rem;
+                color: $primary;
+                background: $light;
+                border-radius: .25rem;
+            }
+        }
+        .social__links {
+            display: flex;
+            flex-wrap: wrap;
+            a{
+                @extend %gcenter;
+                height: 30px;
+                width: 30px;
+                color: $primary;
+                background: $light;
+                border-radius: 0.25rem;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+/* Responsive part */
+
+@media (max-width: 991px) {
+    .home__bg {
+        order: -9999;
+    }
+}
+@media (max-width: 768px) {
+    
+    .services__section .row {
+        margin: 1rem 0;
+    }
+    .services__section .col {
+        flex: 1 0 100%;
+    }
+
+    .features__section {
+        .features .column{
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            h5 span {
+                display: none;
+            }
+        }
+    }
+}
+@media (max-width: 480px) {
+    .newsletter__section {
+        .newsletter {
+            .button {
+                .btn_secondery {
+                    padding: .75rem 2rem;
+                }
+            }
+        }
+    }
+}
+  
